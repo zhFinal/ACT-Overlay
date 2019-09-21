@@ -1,0 +1,345 @@
+@charset "utf-8";
+
+body, table {
+	font-family: Georgia,"微软雅黑";
+	font-size: 12px;
+	padding: 5px;
+}
+
+body, html {
+	margin: 0;
+}
+
+html {
+	height: 100%;
+
+	/* はみ出た内容はスクロールバーを表示させずに隠す */
+	overflow: hidden;
+
+	/* 背景色 */
+	background-color: transparent;
+}
+
+.resizeHandle {
+	/* リサイズ用のハンドル
+	* リサイズができる場所はウィンドウ右下の16x16ピクセルの場所 */
+	background-image: url(handle.png);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+}
+
+#table_box {
+	width: 100%;
+	border-radius:8px;
+}
+
+/*
+::-webkit-scrollbar {
+width: 5px;
+}
+
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
+}
+*/
+
+.num {
+	font-family: "Georgia";
+}
+
+.symbol {
+	font-family: "Webdings";
+	font-size: 22px;
+}
+
+.colorYellow {
+	color: #DED7BE;
+	text-shadow: -1px 0 2px #795516, 0 1px 2px #795516, 1px 0 2px #795516, 0 -1px 2px #795516;
+}
+
+.colorBlue {
+	color: #E2EBF5;
+	text-shadow: -1px 0 3px #217AA2, 0 1px 3px #217AA2, 1px 0 3px #217AA2, 0 -1px 3px #217AA2;
+}
+
+.colorRed {
+	color: #E2EBF5;
+	text-shadow: -1px 0 3px #A52A2A, 0 1px 3px #A52A2A, 1px 0 3px #A52A2A, 0 -1px 3px #A52A2A;
+}
+
+.colorGreen {
+	color: #66FF55;
+	text-shadow: -1px 0 3px #217AA2, 0 1px 3px #217AA2, 1px 0 3px #217AA2, 0 -1px 3px #217AA2;
+}
+
+.colorPurple {
+	color: #EE82EE;
+	text-shadow: -1px 0 3px #8A2BE2, 0 1px 3px #8A2BE2, 1px 0 3px #8A2BE2, 0 -1px 3px #8A2BE2;
+}
+
+.colorGold {
+	color: #FFD700;
+	text-shadow: -1px 0 3px #FFA500, 0 1px 3px #FFA500, 1px 0 3px #FFA500, 0 -1px 3px #FFA500;
+}
+
+.floatRight {
+	float: right;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.marginLeft {
+	margin-left: 5px;
+}
+
+#encounter {
+	width: 100%;
+	font-weight: 300;
+	white-space: nowrap;
+}
+
+#combatantTable {
+	width: 100%;
+	font-weight: 300;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+#combatantTableBody * {
+	padding: 0px 0px 0px 0px;
+
+	/* はみ出たテキストを「…」で省略する */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.cellHeader {
+	position: relative;
+	height: 40px;
+}
+
+.cellHeaderTop {
+	position: absolute;
+	margin-top: 18px;
+	right: 0px;
+}
+
+.cellHeaderMiddle {
+	position: absolute;
+
+	/* はみ出たテキストを「…」で省略する */
+	font-size: 18px;
+	color: #E2EBF5;
+	text-shadow: -1px 0 3px #A52A2A, 0 1px 3px #A52A2A, 1px 0 3px #A52A2A, 0 -1px 3px #A52A2A;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cellHeaderBottom {
+	position: absolute;
+	margin-top: 24px;
+	margin-left: 3px;
+}
+
+.cellHeaderBottomSub {
+	position: absolute;
+	margin-top: 24px;
+	margin-left: 3px;
+}
+
+.titleHeader {
+	position: relative;
+	font-size: 10px;
+	top: 2px;
+}
+
+.dpsHeader {
+	font-size: 12px;
+}
+
+.timeHeader {
+	margin-top: 2px;
+	margin-left: 5px;
+	font-size: 18px;
+}
+
+.enemyHeader {
+	margin-top: 2px;
+	margin-left: 5px;
+	font-size: 16px;
+}
+
+.tankan {
+	display: table-cell;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.cellJob {
+	position: relative;
+	top: 3px;
+	height: 25px;
+	width: 25px;
+}
+
+.cellJobTank {
+	background: -webkit-gradient(linear, left bottom, right top,
+				color-stop(0.51,rgba(0,0,0,0)),
+				color-stop(0.51,rgba(65,105,225,0.5)),
+				color-stop(0.7,rgba(65,105,225,0.5)),
+				color-stop(0.7,rgba(0,0,0,0))
+				);
+}
+
+.cellJobHealer {
+	background: -webkit-gradient(linear, left bottom, right top,
+				color-stop(0.51,rgba(0,0,0,0)),
+				color-stop(0.51,rgba(50,205,50,0.5)),
+				color-stop(0.7,rgba(50,205,50,0.5)),
+				color-stop(0.7,rgba(0,0,0,0))
+				);
+}
+
+.cellJobDps {
+	background: -webkit-gradient(linear, left bottom, right top,
+				color-stop(0.51,rgba(0,0,0,0)),
+				color-stop(0.51,rgba(220,20,60,0.5)),
+				color-stop(0.7,rgba(220,20,60,0.5)),
+				color-stop(0.7,rgba(0,0,0,0))
+				);
+}
+
+.cellJobPet {
+	background: -webkit-gradient(linear, left bottom, right top,
+				color-stop(0.51,rgba(0,0,0,0)),
+				color-stop(0.51,rgba(255,69,0,0.5)),
+				color-stop(0.7,rgba(255,69,0,0.5)),
+				color-stop(0.7,rgba(0,0,0,0))
+				);
+}
+
+.cell {
+	position: relative;
+	height: 30px;
+}
+
+.you {
+	color: #66FF55;
+}
+
+.name {
+	margin-top: 4px;
+	margin-left: 2px;
+}
+
+.nameSub {
+	margin-top: -18px;
+	margin-left: 2px;
+}
+
+.dps {
+	margin-right: 5px;
+	margin-top: -22px;
+	font-size: 18px;
+}
+
+.dpsSub {
+	margin-right: 5px;
+	margin-top: -22px;
+	font-size: 18px;
+}
+
+.bar {
+	position: absolute;
+	display: block;
+	margin-top: -1px;
+	height: 10px;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.ex {
+	position: absolute;
+	margin-top: -4px;
+	font-size: 10px;
+	margin-left: 0px;
+}
+
+.nameOpTop {
+	position: absolute;
+	/* width: 72px; */
+	font-size: 9px;
+	top: -3px;
+	right: 95px;
+}
+
+.nameOpUnder {
+	position: absolute;
+	width: 72px;
+	font-size: 9px;
+	top: 7px;
+	right: 59px;
+}
+
+.cellOp {
+	font-size: 10px;
+	margin-left: 8px;
+}
+
+.cellOpTop {
+	margin-top: 5px;
+}
+
+.cellOpTopSub {
+	margin-top: -25px;
+}
+
+.cellOpUnder, .cellOpUnderSub {
+	margin-top: -5px;
+}
+
+.numMissDeath {
+	margin-right: 8px;
+}
+
+.percent {
+	font-size: 7px;
+	margin-top: 5px;
+}
+
+.plus {
+	margin-top: 5px;
+	margin-right: 3px;
+	font-size: 12px;
+}
+
+.copy:before {
+	color: #66FF55;
+	text-shadow: -1px 0 3px #217AA2, 0 1px 3px #217AA2, 1px 0 3px #217AA2, 0 -1px 3px #217AA2;
+	content: "Copied! ";
+	font-size:10px;
+}
+
+.tggoleVisible {
+	visibility: hidden;
+}
+
+.tggoleDisplay {
+	display: none;
+}
+
+.tankBlock, .healerBlock, .dpsBlock, .opClasses {
+}
